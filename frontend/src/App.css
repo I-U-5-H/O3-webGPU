@@ -182,3 +182,27 @@
     border-right-color: var(--border);
   }
 }
+/* Modern Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #131314; /* Matches your O3 background perfectly */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151; /* Sleek dark gray */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; /* Slightly lighter on hover */
+}
+
+/* Firefox compatibility */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #131314;
+}

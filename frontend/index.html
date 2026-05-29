@@ -5,6 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/cato3.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project O3</title>
+    <style>
+      /* Force Modern Dark Scrollbar Everywhere */
+      ::-webkit-scrollbar { 
+        width: 8px !important; 
+        height: 8px !important; 
+      }
+      ::-webkit-scrollbar-track { 
+        background: #131314 !important; /* Blends into your app background */
+      }
+      ::-webkit-scrollbar-thumb { 
+        background: #374151 !important; /* Sleek dark gray */
+        border-radius: 10px !important; 
+      }
+      ::-webkit-scrollbar-thumb:hover { 
+        background: #4b5563 !important; 
+      }
+      /* Firefox compatibility */
+      * {
+        scrollbar-width: thin !important;
+        scrollbar-color: #374151 #131314 !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
