@@ -34,7 +34,7 @@ async def chat_api(request: ChatRequest):
         
     try:
         response = await client.aio.models.generate_content(
-            model="gemini-1.5-flash", # Using 1.5 to prevent 503 errors!
+            model="gemini-3.5-flash", 
             contents=request.masked_message
         )
         return {"cloud_response": response.text or ""}

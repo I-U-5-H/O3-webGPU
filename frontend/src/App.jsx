@@ -312,7 +312,7 @@ function App() {
         
         {stage === 'intro' && (
           <div className="relative z-10 flex flex-col items-center justify-center h-full pt-10">
-            <BlurText text="Project O3" delay={120} animateBy="letters" direction="top" className="font-bold tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] uppercase text-6xl md:text-7xl mb-4" />
+            <BlurText text="Project O3" delay={120} animateBy="letters" direction="top" className="font-bold tracking-widest text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] uppercase text-5xl sm:text-6xl md:text-7xl mb-4 whitespace-nowrap" />
             <p className="text-gray-400 text-xs md:text-sm font-mono tracking-[0.35em] uppercase opacity-75 animate-fade-in text-center mb-12">Can't come up with a tagline 🫤</p>
             <form onSubmit={handleSubmit} className="w-full max-w-2xl px-4 pointer-events-auto">
               <div className={`flex items-center bg-[#1e1f20] border rounded-full px-6 py-4 transition-all duration-300 shadow-xl ${isModelLoaded ? 'border-white/10 focus-within:border-white/30 focus-within:bg-[#252628]' : 'border-cyan-500/30'}`}>
