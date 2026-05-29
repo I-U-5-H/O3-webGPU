@@ -5,6 +5,7 @@ import ollama
 from google import genai
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware # 1. IMPORT THIS
 from pydantic import BaseModel
 
 try:
@@ -18,6 +19,15 @@ if not GEMINI_API_KEY:
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 app = FastAPI()
+
+# 2. ADD THIS CORS MIDDLEWARE BLOCK
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows your React app on localhost:5173 to connect
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 privacy_map = {}
 
@@ -147,7 +157,8 @@ def secure_prompt_pipeline(user_input):
         "combined": combined_pii,
         "masked_prompt": masked,
         "cloud_response": cloud_response,
-        "final_output": final_output
+        "final_output": final_output,
+        "privacy_map": privacy_map
     }
 
 class ChatRequest(BaseModel):
