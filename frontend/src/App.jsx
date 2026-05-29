@@ -249,7 +249,7 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen w-full bg-[#131314] text-white overflow-hidden font-sans select-none">
+    <div className="flex h-screen w-full bg-[#131314] text-white overflow-hidden font-sans">
       
       {/* LEFT SIDEBAR */}
       <div className={`flex flex-col bg-[#1e1f20] transition-all duration-300 ease-in-out border-r border-white/5 ${isSidebarOpen ? 'w-64 md:w-72 opacity-100' : 'w-0 opacity-0 overflow-hidden border-none'}`}>

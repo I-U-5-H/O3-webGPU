@@ -57,9 +57,16 @@ async def serve_react_app(catchall: str):
     if catchall.startswith("api/"): 
         return {"error": "API route not found"}
     
+    # NEW: Check if the browser is asking for a specific file (like favicon.ico or logo.png)
+    requested_file = os.path.join(frontend_dist, catchall)
+    if os.path.isfile(requested_file):
+        return FileResponse(requested_file)
+    
+    # Otherwise, fallback to the main index.html so React Router can take over
     html_file = os.path.join(frontend_dist, "index.html")
     if os.path.isfile(html_file):
         return FileResponse(html_file)
+        
     return {"error": "Frontend build not found. Please run 'npm run build' in the frontend folder."}
 
 if __name__ == "__main__":
